@@ -51,7 +51,7 @@ export default class NewSupplier extends Component {
         attachment,
         content: this.state.content
       });
-      this.props.history.push("/");
+      this.props.history.push("/loggedin");
     } catch (e) {
       alert(e);
       this.setState({ isLoading: false });

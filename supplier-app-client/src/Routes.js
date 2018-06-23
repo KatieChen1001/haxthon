@@ -3,6 +3,7 @@ import { Switch } from "react-router-dom";
 import AppliedRoute from "./components/AppliedRoute";
 import Home from "./containers/Home.js";
 import Login from "./containers/Login.js";
+import Signup from "./containers/Signup.js";
 import NewSupplier from "./containers/NewSupplier.js";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
@@ -17,6 +18,8 @@ export default ({ childProps }) => (
       component={Login}
       props={childProps}
     />
+    <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
+
     <AuthenticatedRoute
       path="/loggedin"
       exact
