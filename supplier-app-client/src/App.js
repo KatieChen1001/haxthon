@@ -54,15 +54,26 @@ class App extends Component {
         <div className="App container">
           <Navbar fluid collapseOnSelect>
             <Navbar.Header>
-              <Navbar.Brand>
-                <Link to="/">HAX</Link>
-              </Navbar.Brand>
+              {this.state.isAuthenticated ? (
+                <Navbar.Brand>
+                  <Link to="/loggedin">HAX</Link>
+                </Navbar.Brand>
+              ) : (
+                <Navbar.Brand>
+                  <Link to="/">HAX</Link>
+                </Navbar.Brand>
+              )}
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav pullRight>
                 {this.state.isAuthenticated ? (
-                  <NavItem onClick={this.handleLogout}>Logout</NavItem>
+                  <Fragment>
+                    <LinkContainer to="/profile">
+                      <NavItem>Welcome XXX</NavItem>
+                    </LinkContainer>
+                    <NavItem onClick={this.handleLogout}>Logout</NavItem>
+                  </Fragment>
                 ) : (
                   <Fragment>
                     <LinkContainer to="/signup">

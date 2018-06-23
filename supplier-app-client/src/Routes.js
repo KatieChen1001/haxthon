@@ -8,6 +8,7 @@ import NewSupplier from "./containers/NewSupplier.js";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 import Loggedin from "./containers/Loggedin.js";
+import Profile from "./containers/Profile.js";
 
 export default ({ childProps }) => (
   <Switch>
@@ -24,6 +25,12 @@ export default ({ childProps }) => (
       path="/loggedin"
       exact
       component={Loggedin}
+      props={childProps}
+    />
+    <AuthenticatedRoute
+      path="/profile"
+      exact
+      component={Profile}
       props={childProps}
     />
 
