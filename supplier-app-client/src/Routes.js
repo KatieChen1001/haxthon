@@ -8,7 +8,8 @@ import NewSupplier from "./containers/NewSupplier.js";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 import Loggedin from "./containers/Loggedin.js";
-import Profile from "./containers/Profile.js";
+import MySupplier from "./containers/MySupplier.js";
+import Supplier from "./containers/Supplier.js";
 
 export default ({ childProps }) => (
   <Switch>
@@ -28,18 +29,25 @@ export default ({ childProps }) => (
       props={childProps}
     />
     <AuthenticatedRoute
-      path="/profile"
+      path="/MySupplier"
       exact
-      component={Profile}
+      component={MySupplier}
       props={childProps}
     />
-
     <AppliedRoute
+      exact
       path="/supplier/new"
       exact
       component={NewSupplier}
       props={childProps}
     />
+    <AppliedRoute
+      path="/supplier/:id"
+      exact
+      component={Supplier}
+      props={childProps}
+    />
+
     {/* Finally, catch all unmatched routes */}
   </Switch>
 );

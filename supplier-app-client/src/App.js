@@ -69,7 +69,7 @@ class App extends Component {
               <Nav pullRight>
                 {this.state.isAuthenticated ? (
                   <Fragment>
-                    <LinkContainer to="/profile">
+                    <LinkContainer to="/MySupplier">
                       <NavItem>Welcome XXX</NavItem>
                     </LinkContainer>
                     <NavItem onClick={this.handleLogout}>Logout</NavItem>

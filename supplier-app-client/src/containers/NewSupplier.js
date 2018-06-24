@@ -65,11 +65,8 @@ export default class NewSupplier extends Component {
   }
 
   render() {
-    // let user = Auth.currentAuthenticatedUser();
-    // console.log(user);
-
     return (
-      <div className="NewNote">
+      <div>
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="content">
             <FormControl

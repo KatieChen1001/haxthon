@@ -6,7 +6,7 @@ import { API } from "aws-amplify";
 
 // import "./Home.css";
 
-export default class Home extends Component {
+export default class MySupplier extends Component {
   constructor(props) {
     super(props);
 
@@ -41,7 +41,7 @@ export default class Home extends Component {
         i !== 0 ? (
           <ListGroupItem
             key={note.noteId}
-            href={`/notes/${note.noteId}`}
+            href={`/supplier/${note.noteId}`}
             onClick={this.handleNoteClick}
             header={note.content.trim().split("\n")[0]}>
             {"Created: " + new Date(note.createdAt).toLocaleString()}
